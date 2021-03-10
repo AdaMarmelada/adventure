@@ -1,0 +1,211 @@
+html
+	ff $os
+
+header
+footer
+	background-color #282a2d
+	padding 10px 0
+	font-family "PT Sans"
+	font-size 11px
+	color rgba(235,244,255,.25)
+
+main
+	display flex
+	flex-wrap wrap
+	flex-direction column
+	min-height 100vh
+
+.main__content
+	flex-grow 1
+	width 100%
+
+.container
+	margin 0 auto
+
+header
+	.header-logo
+		width 41px
+		mr(25px)
+
+h1
+h2
+h3
+	font-family "NewBaskervilleC"
+	color #ffffff
+	line-height 1
+
+h1
+	font-size 36px
+
+h2
+	font-size 32px
+
+h3
+	font-size 20px
+
+.d-flex
+	df($at = center, $jc = flex-start)
+
+section
+	pt(65px)
+	pb(75px)
+
+.filters
+	a
+		font-family "PT Sans"
+		font-size 12px
+		text-transform uppercase
+		color #9fa2a8
+		text-decoration none
+
+		&.active
+			border-bottom 2px solid #000
+			font-weight bold
+			color #000
+
+	a + a
+		ml(25px)
+
+.card-list
+	display grid
+	grid-auto-flow dense
+	grid-auto-rows 200px
+	mt(20px)
+
+	.card-list_card
+		position relative
+
+		&.card-list_card__large
+			//padding  80px 30px 55px
+			grid-row span 2
+			grid-column span 2
+
+			.country-details
+				left 30px
+				top 85px
+
+				ol
+					mt(40px)
+
+					li + li
+						mt(30px)
+
+		.hooper
+			padding 0
+			height 100%
+
+			img
+				width 100%
+				height: 100%;
+				object-fit: cover;
+
+			.country-details
+				position absolute
+
+				ol
+					list-style-type decimal
+					color #fff
+					font-family "NewBaskervilleC"
+					padding-left 30px
+
+
+			.hooper-slide
+				display flex
+				justify-content center
+				align-items center
+
+			.hooper-navigation
+				position absolute
+				bottom 20px
+
+				.hooper-prev
+				.hooper-next
+					width 20px
+					height 20px
+					padding 0
+					background-image url("/img/arrow.png")
+					background-size contain
+					background-repeat no-repeat
+					background-position center center
+					padding unset
+					position unset
+					top unset
+					transform unset
+
+					.icon
+						display none
+
+					&.is-disabled
+						opacity unset
+
+				.hooper-next
+					transform rotate(180deg)
+					ml(15px)
+footer
+	.container
+		justify-content flex-end
+		align-items center
+
+	.footer-logo
+		ml(15px)
+
+	.text-bold {
+		color #b5b9be
+	}
+
+@media (min-width: 1300px)
+	.container
+		width 1260px
+	.card-list
+		grid-gap 20px
+		grid-template-columns repeat(auto-fit, calc(25% - 20px))
+
+		.card-list_card
+			.hooper
+				.hooper-navigation
+					right 20px
+
+@media (min-width: 768px) and (max-width: 1199px)
+	.container
+		width calc(100% - 40px)
+	.card-list
+		grid-gap 10px
+		grid-template-columns repeat(auto-fit, calc(50% - 10px))
+
+		.card-list_card
+			.hooper
+				.hooper-navigation
+					right 40px
+
+@media (min-width: 320px) and (max-width: 767px)
+	h1
+		font-size 28px
+
+	h2
+		font-size 22px
+
+	h3
+		font-size 16px
+
+	.container
+		width calc(100% - 20px)
+
+	.filters
+		a
+			font-size 10px
+
+	.card-list
+		grid-gap 5px
+		grid-template-columns repeat(auto-fit, calc(50% - 5px))
+
+		.card-list_card
+			&.card-list_card__large
+				.country-details
+					ol
+						mt(15px)
+
+						li + li
+							mt(10px)
+			.hooper
+				.hooper-navigation
+					right 20px
